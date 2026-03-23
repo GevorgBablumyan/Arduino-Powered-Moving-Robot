@@ -22,14 +22,12 @@ float half_width = 15.0 / 2;
 
 int state = 0;
 
-// ---- BUTTON CONTROL ----
 bool runEnabled = true;
 bool lastButton1 = HIGH;
 bool lastButton2 = HIGH;
 
-// instructions
 char actions[] = {'d','t','d','t','d','t','d','t','d','t','d'};
-float values[] = {38,70,31,26,20,13,64,17,64,14}; // ✅ FIXED: removed double comma
+float values[] = {38,70,31,26,20,13,64,17,64,14}; 
 
 void setup() {
   pinMode(PWMA, OUTPUT);
@@ -119,7 +117,6 @@ void driveB(int speed) {
   analogWrite(PWMB, abs(speed));
 }
 
-// ✅ NONSTOP ROTATION FIXED HERE
 void turn(float angle, int speed) {
   float curAngle = getAngle();
 
